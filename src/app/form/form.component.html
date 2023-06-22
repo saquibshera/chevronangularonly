@@ -1,0 +1,59 @@
+<p>form works!</p>
+<div class="container">
+    <form [formGroup]="ourform" (ngSubmit)="submitform()">
+        <div class="row">
+            <div class="col-md-4">
+                <span>Name</span>
+                <input type="text" class="form-control" formControlName="name">
+                <span class="text-danger"
+                    *ngIf="this.ourform.controls.name.invalid && this.ourform.controls.name.touched">The name is
+                    required</span>
+            </div>
+            <div class="col-md-4">
+                <span>
+                    Address
+                </span>
+                <input type="text" class="form-control" formControlName="address">
+                <span class="text-danger"
+                    *ngIf="this.ourform.controls.address.invalid && this.ourform.controls.address.touched">The address
+                    is
+                    required</span>
+            </div>
+            <div class="col-md-4">
+                <span>
+                    Email
+                </span>
+                <input type="text" class="form-control" formControlName="email">
+                <span class="text-danger"
+                    *ngIf="this.ourform.controls.email.invalid && this.ourform.controls.email.touched">The email is
+                    required</span>
+            </div>
+        </div><br>
+        <div class="row">
+            <div class="col-md-12">
+                <button type="submit" [disabled]="this.ourform.invalid" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+
+    </form>
+
+
+    <!-- <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+
+
+                <th>Address</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of arr">
+                <td>{{x.name}}</td>
+                <td>{{x.address}}</td>
+            </tr>
+        </tbody>
+    </table> -->
+
+</div>

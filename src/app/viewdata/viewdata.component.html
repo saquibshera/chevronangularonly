@@ -1,0 +1,22 @@
+<p>List of persons</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+
+
+            <th>Address</th>
+        </tr>
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let x of tableinfo">
+            <td>{{x.name}}</td>
+            <td>{{x.address}}</td>
+            <td>{{x.email}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="delete(x.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
